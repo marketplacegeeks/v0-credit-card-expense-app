@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* #f9fafb */
+    --foreground: 222 47% 11%; /* #1f2937 */
+
+    --card: 0 0% 100%; /* white */
+    --card-foreground: 222 47% 11%; /* #1f2937 */
+
+    --popover: 0 0% 100%; /* white */
+    --popover-foreground: 222 47% 11%; /* #1f2937 */
+
+    --primary: 220 83% 48%; /* #1a56db */
+    --primary-foreground: 210 40% 98%; /* white */
+
+    --secondary: 220 14% 96%; /* #f3f4f6 */
+    --secondary-foreground: 222 47% 11%; /* #1f2937 */
+
+    --muted: 220 14% 96%; /* #f3f4f6 */
+    --muted-foreground: 220 9% 46%; /* #6b7280 */
+
+    --accent: 220 14% 96%; /* #f3f4f6 */
+    --accent-foreground: 222 47% 11%; /* #1f2937 */
+
+    --destructive: 0 84% 60%; /* red */
+    --destructive-foreground: 210 40% 98%; /* white */
+
+    --border: 220 13% 91%; /* light gray */
+    --input: 220 13% 91%; /* light gray */
+    --ring: 220 83% 48%; /* #1a56db */
+
+    --radius: 0.5rem;
+
+    /* Custom colors */
+    --teal: 173 92% 32%; /* #0d9488 */
+    --teal-foreground: 210 40% 98%; /* white */
+
+    --amber: 35 92% 44%; /* #d97706 */
+    --amber-foreground: 210 40% 98%; /* white */
+
+    /* Fixed sidebar width */
+    --sidebar-width: 220px;
+  }
+
+  .dark {
+    --background: 222 47% 11%; /* #1f2937 */
+    --foreground: 210 40% 98%; /* white */
+
+    --card: 222 47% 11%; /* #1f2937 */
+    --card-foreground: 210 40% 98%; /* white */
+
+    --popover: 222 47% 11%; /* #1f2937 */
+    --popover-foreground: 210 40% 98%; /* white */
+
+    --primary: 220 83% 48%; /* #1a56db */
+    --primary-foreground: 210 40% 98%; /* white */
+
+    --secondary: 217 33% 17%; /* dark gray */
+    --secondary-foreground: 210 40% 98%; /* white */
+
+    --muted: 217 33% 17%; /* dark gray */
+    --muted-foreground: 215 20% 65%; /* medium gray */
+
+    --accent: 217 33% 17%; /* dark gray */
+    --accent-foreground: 210 40% 98%; /* white */
+
+    --destructive: 0 63% 31%; /* dark red */
+    --destructive-foreground: 210 40% 98%; /* white */
+
+    --border: 217 33% 17%; /* dark gray */
+    --input: 217 33% 17%; /* dark gray */
+    --ring: 213 27% 84%; /* light gray */
+
+    /* Custom colors */
+    --teal: 173 92% 32%; /* #0d9488 */
+    --teal-foreground: 210 40% 98%; /* white */
+
+    --amber: 35 92% 44%; /* #d97706 */
+    --amber-foreground: 210 40% 98%; /* white */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Remove any transitions or animations related to sidebar */
+.sidebar-transition {
+  transition: none !important;
+}
+
+/* Ensure content maintains proper width */
+.content-container {
+  width: calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+}
